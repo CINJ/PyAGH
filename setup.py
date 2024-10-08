@@ -49,7 +49,8 @@ setup(
           'Topic :: Scientific/Engineering :: Bio-Informatics',
       ],
     ext_modules=[Extension(name='FUNC',  # 模块名称
-                            sources=['scrc/function_c.cpp']  # 源码
+                            sources=['scrc/function_c.cpp'],  # 源码
+                           extra_compile_args = ["-g","-std=c++11","-Wall","-pedantic","-Wc++11-extensions"]
                            )],
     package_data={
         '':['data/*'],

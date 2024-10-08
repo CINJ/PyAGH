@@ -1,0 +1,6 @@
+.eggs/
+PyAGH.egg-info/
+build/
+dist/
+venv/
+
