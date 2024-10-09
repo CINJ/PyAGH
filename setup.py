@@ -1,5 +1,7 @@
 from setuptools import setup,find_packages,Extension
 import os
+import sys
+
 
 os.environ["CC"] = "g++"  # 指定编译器为 g++
 os.environ["CXX"] = "g++"
@@ -8,6 +10,9 @@ __VERSION__ = '0.3.2'
 BASE_DIR = os.path.dirname(__file__)
 os.chdir(BASE_DIR)
 
+eca: [str] = ["-g","-std=c++11","-Wall","-pedantic"]
+if sys.platform == "darwin":
+    eca.append("-Wc++11-extensions")
 
 
 setup(
@@ -50,7 +55,7 @@ setup(
       ],
     ext_modules=[Extension(name='FUNC',  # 模块名称
                             sources=['scrc/function_c.cpp'],  # 源码
-                           extra_compile_args = ["-g","-std=c++11","-Wall","-pedantic","-Wc++11-extensions"]
+                           extra_compile_args = eca
                            )],
     package_data={
         '':['data/*'],

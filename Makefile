@@ -16,7 +16,6 @@ setup: ## Setup environment
 .PHONY: venv setup build
 
 build: ## Build 
-	source venv/bin/activate;CXXFLAGS="-g -std=c++11 -Wall -pedantic";python setup.py sdist bdist_wheel
-	source venv/bin/activate;CXXFLAGS="-g -std=c++11 -Wall -pedantic";python setup.py sdist
+	source venv/bin/activate;python setup.py sdist bdist_wheel
 
 
