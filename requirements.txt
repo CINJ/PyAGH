@@ -1,6 +1,6 @@
 pandas
 numpy 
-pybind11
+pybind11[global]
 sympy
 scipy 
 polars 
